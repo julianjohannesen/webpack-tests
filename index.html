@@ -1,17 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webpack Test 3</title>
-</head>
-<body>
-    <header>
-        <h1>Hello, world!</h1>
-    </header>
+    <link rel="stylesheet" href="src/styles/styles.css">
 
+</head>
+
+<body>
+    <div class="section wrapper">
+
+        <header class="header">
+            <h1 class="title">Webpack 4 without configuration</h1>
+        </header>
+
+        <main>
+
+            <article class="section">
+
+                <p>Using Webpack 4, you can begin to use Webpack without creating a webpack.config.js file. </p>
+
+                <h2 class="title size-2">Step 1</h2>
+                <p>To do that, you first needed to initialize a new project.</p>
+
+    <pre>
+    <code class="bash">
+    npm init -y
+    </code>
+    </pre>
+
+                <p>That will create a package.json file in our project directory with default settings.</p>
+
+                <h2 class="title size-2">Step 2</h2>
+                <p>Now you can install webpack, webpack-cli, and webpack-dev-server.</p>
+
+    <pre>
+    <code class="bash">
+    npm install webpack webpack-cli webpack-dev-server
+    </code>
+    </pre>
+
+        <h2 class="title size-2">Step 3</h2>
+                <p>Next, you needed to open package.json and under scripts, create two new scripts:</p>
+
+    <pre>
+    <code class="json">
+    "scripts": {
+        "build": "webpack --mode development",
+        "start:dev": "webpack-dev-server"
+    },
+    </code>
+    </pre>
+
+                <p>We'll get back to how to run these scripts in a minute.</p>
+
+                <h2 class="title size-2">Step 4</h2>
+                <p>Next, create an index.html file with boilerplate html and add a script tag just before the closing body tag that links to our main JavaScript file. We'll create that file next.</p>
+
+    <pre>
+    <code class="xml">
+    &lt;!DOCTYPE html>
+    &lt;html lang="en">
+    
+        &lt;head>
+            &lt;meta charset="UTF-8">
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+            &lt;meta http-equiv="X-UA-Compatible" content="ie=edge">
+            &lt;title>Webpack Test&lt;/title>
+        &lt;/head>
+        
+        &lt;body>
+
+        &lt;script src="main.js">&lt;/script>
+        &lt;/body>
+        
+    &lt;/html>
+    </code>
+    </pre>
+
+        <p></p>
+
+            </article>
+        </main>
+    </div>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <!-- When using webpack-dev-server, the webpack output is served from the root directory, which means that we can use 'main.js' in our script path. Note that webpack-dev-server stores the webpack bundle in memeory, not in a 'dist' folder. If we were to use 'dist/main.js' our script path below, then we'd be referring to the version of 'main.js' in the 'dist' folder and that would only work, if we had used our 'npm run build' command before running 'npm run start:dev'. -->
     <script src="main.js"></script>
 </body>
+
 </html>
